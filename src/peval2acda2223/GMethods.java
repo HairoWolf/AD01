@@ -43,8 +43,6 @@ public class GMethods {
 
 	/**
 	 * Method prints a split text
-	 * 
-	 * @param txt
 	 */
 	public static void printDiv() {
 		System.out.println("------------------------------------------");

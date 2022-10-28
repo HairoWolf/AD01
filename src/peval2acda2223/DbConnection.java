@@ -23,12 +23,12 @@ public class DbConnection {
 			 sentencia = (Statement) conexion.createStatement();
 		}
 		catch (ClassNotFoundException cn){
-			//TODO
 			 cn.printStackTrace();
+			System.exit(0);
 		}
 		catch (SQLException e){
-			//TODO
 			 e.printStackTrace();
+			System.exit(0);
 		}
 	}
 	
@@ -55,7 +55,6 @@ public class DbConnection {
 				e.printStackTrace();
 			}
 		 }
-		 //sentencia.close();
 		 resul.close();
 	}
 	
@@ -98,10 +97,6 @@ public class DbConnection {
 		            case Types.BIGINT:
 		                System.out.print(resultSet.getBigDecimal(i));
 		                break;
-		            /*default:
-		            	System.out.println(rsmd.getColumnClassName(i));
-		            	System.out.print(resultSet.getBigDecimal(i));
-		            	break;*/
 	            }
 	            if(i != columnCount) {
 		            System.out.print(", ");

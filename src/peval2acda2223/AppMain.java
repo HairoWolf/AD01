@@ -32,8 +32,10 @@ public class AppMain {
 				GMethods.printDiv();
 				switch(option) {
 					case 1:
+						//TODO
 						break;
 					case 2:
+						//TODO
 						break;
 					case 3:
 						//TODO hacer bucle para preguntar
