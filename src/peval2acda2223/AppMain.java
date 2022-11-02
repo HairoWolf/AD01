@@ -17,6 +17,7 @@ public class AppMain {
 		
 		DbConnection db = new DbConnection();
 		byte option = 0;
+		boolean loop = true;
 		String city = "", player = "", query = "";
 		
 		while(option != 5) {
@@ -38,18 +39,18 @@ public class AppMain {
 						//TODO
 						break;
 					case 3:
-						//TODO hacer bucle para preguntar
-						try {
-						city = GMethods.keyBString("Introduce la ciudad que quieres ver:");
-						query = "SELECT j.nombre, j.altura, j.peso, j.posicion, j.Nombre_equipo "
-								+ "FROM jugadores j, equipos e WHERE e.Nombre = j.Nombre_equipo and e.Ciudad like '" + city + "'";
+						while(loop) {
+							try {
+								city = GMethods.keyBString("Introduce la ciudad que quieres ver:");
+								query = "SELECT j.nombre, j.altura, j.peso, j.posicion, j.Nombre_equipo "
+										+ "FROM jugadores j, equipos e WHERE e.Nombre = j.Nombre_equipo and e.Ciudad like '" + city + "'";
+							} catch (Exception e) {
+								GMethods.printError("Error al introducir la ciudad");
+							}
+							//TODO revisar el metodo
+							db.select(query);
+							GMethods.printDiv();
 						}
-						catch(Exception e) {
-							GMethods.printError("Error al introducir la ciudad");
-						}
-						//TODO revisar el metodo
-						db.select(query);
-						GMethods.printDiv();
 						break;
 					case 4:
 						//TODO hacer bucle para preguntar
