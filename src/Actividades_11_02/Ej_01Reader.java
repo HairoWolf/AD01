@@ -5,7 +5,7 @@ import com.db4o.ObjectContainer;
 import com.db4o.ObjectSet;
 
 public class Ej_01Reader {
-    final static String BDPer = "C:\\Users\\jtienda\\Documents\\2 DAM\\AD\\DB_Objects\\DBEj_01.yap";
+    final static String BDPer = "C:\\Users\\jtienda\\Documents\\2 DAM\\AD\\DB_Objects_Files\\DBEj_01.yap";
     public static void main(String[] args) {
         ObjectContainer db = Db4oEmbedded.openFile(BDPer);
         //LEER TODOS LOS REGISTROS

@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public class Ej_01Main {
 
-    final static String DBEmple = "C:\\Users\\jtienda\\Documents\\2 DAM\\AD\\DB_Objects\\EMPLEDEP.yap";
+    final static String DBEmple = "C:\\Users\\jtienda\\Documents\\2 DAM\\AD\\DB_Objects_Files\\EMPLEDEP.yap";
 
     public static void main(String[] args) {
         byte option = 0;
-        boolean loop = true;
+        //boolean loop = true;
         while(option != 5) {
             try {
                 option = GMethods.keyBByte("Menu de eleccion:\n 1: Insertar registros\n 2: Eliminar registros\n 3: Actualizar registros\n 4: Salir");
