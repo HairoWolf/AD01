@@ -2,9 +2,6 @@ package Ejercicios_11_07.Clases;
 
 import org.neodatis.odb.ODB;
 import org.neodatis.odb.Objects;
-import org.neodatis.odb.core.query.IQuery;
-import org.neodatis.odb.core.query.criteria.Where;
-import org.neodatis.odb.impl.core.query.criteria.CriteriaQuery;
 
 public class Visualizar {
 
@@ -24,7 +21,7 @@ public class Visualizar {
         //Visualizar los objetos
         while (objectsPaises.hasNext()) {
             Paises pais = objectsPaises.next();
-            System.out.printf("%d: %s, %n", j++, pais.getNombrePais());
+            System.out.printf("---%s--- %n",pais.getNombrePais());
 
             Objects<Jugadores> objects = odb.getObjects(Jugadores.class);
 
