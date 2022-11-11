@@ -17,9 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         byte option = 0;
-        boolean almacenado = false;
 
-        Path archivo = Paths.get("C:\\Users\\jtienda\\Documents\\2 DAM\\AD\\DB_Neodatis\\equipos.neo");
         ODB odb = ODBFactory.open("C:\\Users\\jtienda\\Documents\\2 DAM\\AD\\DB_Neodatis\\equipos.neo"); //Abrir BD
 
         while(option != 6) {
@@ -34,10 +32,6 @@ public class Main {
                 System.out.println("================================================");
                 switch (option) {
                     case 1:
-                        if(Files.exists(archivo)){
-                            System.out.println("La base de datos ya existe");
-                        }
-                        else {
                             Paises p1 = new Paises(1, "España");
                             Paises p2 = new Paises(2, "Francia");
 
@@ -51,20 +45,13 @@ public class Main {
                             odb.store(j2);
                             odb.store(j3);
                             odb.store(j4);
-                            almacenado = true;
                             System.out.println("Base de datos creada....");
-                        }
                         System.out.println("================================================");
                         break;
 
                     case 2:
-                        if (almacenado || Files.exists(archivo)) {
                             Visualizar v = new Visualizar(odb);
                             v.verDatos();
-                        } else {
-                            System.out.println("La base de datos aun no esta creada");
-                            System.out.println("================================================");
-                        }
                         break;
                     case 6:
                         odb.close();
