@@ -7,11 +7,6 @@ import org.neodatis.odb.ODB;
 import org.neodatis.odb.ODBFactory;
 import peval2acda2223.GMethods;
 
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 public class Main {
 
     public static void main(String[] args) {
