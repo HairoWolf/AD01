@@ -1,5 +1,7 @@
 package peval3;
 
+import java.sql.ResultSet;
+
 /**
  *
  * @author Javier Tienda González
@@ -11,8 +13,19 @@ package peval3;
 public class AppMain {
 
     public static void main(String[] args) {
+
+        /**
+         * Constants to define the parameters of the DB
+         */
+        String PATH = "C:\\Users\\jtienda\\Documents\\2 DAM\\AD\\PEVAL3\\Fichero_neo\\biblioteca.neo";
+        String DBNAME = "biblioteca";
+        String DBUSER = "root";
+
+        /**
+         * Byte option to select in the menu
+         */
         byte option = 0;
-        boolean bdCreada = false;
+        boolean createdDB = false;
 
         //Menu de eleccion
         while(option != 8) {
@@ -23,66 +36,36 @@ public class AppMain {
             GMethods.printDiv();
             try {
                 option = GMethods.keyBByte("Introduce la opcion");
-                if (option < 1 || option > 8) {
-                    GMethods.printError("Elige una opcion valida");
-                }
                 GMethods.printDiv();
                 switch (option){
                     case 1:
-                        //TODO crear el .neo y almacenar en el toda la informacion (Libros, Usuarios y Prestamos)
-                        bdCreada = true;
+                        //TODO comentar la clase
+                        new DBConnection(PATH, DBNAME, DBUSER);
                         break;
                     case 2:
-                        if(bdCreada){
-                            //TODO Alta de libros
-                        }
-                        else{
-                            GMethods.printError("La base de datos no ha sido creada aun");
-                        }
+                        //TODO Alta de libros
                         break;
                     case 3:
-                        if(bdCreada){
-                            //TODO Bajas de usuarios
-                        }
-                        else{
-                            GMethods.printError("La base de datos no ha sido creada aun");
-                        }
+                        //TODO Bajas de usuarios
                         break;
                     case 4:
-                        if(bdCreada){
-                            //TODO Modificaciones de préstamos
-                        }
-                        else{
-                            GMethods.printError("La base de datos no ha sido creada aun");
-                        }
+                        //TODO Modificaciones de préstamos
                         break;
                     case 5:
-                        if(bdCreada){
-                            //TODO Préstamos de un usuario que se hayan entregado con retraso
-                        }
-                        else{
-                            GMethods.printError("La base de datos no ha sido creada aun");
-                        }
+                        //TODO Préstamos de un usuario que se hayan entregado con retraso
                         break;
                     case 6:
-                        if(bdCreada){
-                            //TODO Libros de un género y precio especificado
-                        }
-                        else{
-                            GMethods.printError("La base de datos no ha sido creada aun");
-                        }
+                        //TODO Libros de un género y precio especificado
                         break;
                     case 7:
-                        if(bdCreada){
-                            //TODO Préstamos realizados en una provincia determinada en un período de tiempo
-                        }
-                        else{
-                            GMethods.printError("La base de datos no ha sido creada aun");
-                        }
+                        //TODO Préstamos realizados en una provincia determinada en un período de tiempo
                         break;
                     case 8:
                         GMethods.println("Hasta luego!!!");
                         System.exit(0);
+                        break;
+                    default:
+                        GMethods.printError("Elige una opcion valida");
                         break;
                 }
             }

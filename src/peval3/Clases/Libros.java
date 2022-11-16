@@ -12,7 +12,8 @@ public class Libros {
 
     //Campos de clase
     private int codLibro, numPaginas, anyoEdicion;
-    private String nomLibro, editorial, autor, genero, paisAutor, precioLibro;
+    private String nomLibro, editorial, autor, genero, paisAutor;
+    private double precioLibro;
 
     /**
      * Constructor de clase parametrizado
@@ -24,9 +25,9 @@ public class Libros {
      * @param autor Nombre del autor del libro (String)
      * @param genero Genero del libro (String)
      * @param paisAutor Pais del autor del libro (String)
-     * @param precioLibro Precio del libro (String)
+     * @param precioLibro Precio del libro (double)
      */
-    public Libros(int codLibro, int numPaginas, int anyoEdicion, String nomLibro, String editorial, String autor, String genero, String paisAutor, String precioLibro) {
+    public Libros(int codLibro, int numPaginas, int anyoEdicion, String nomLibro, String editorial, String autor, String genero, String paisAutor, double precioLibro) {
         this.codLibro = codLibro;
         this.numPaginas = numPaginas;
         this.anyoEdicion = anyoEdicion;
@@ -105,11 +106,11 @@ public class Libros {
         this.paisAutor = paisAutor;
     }
 
-    public String getPrecioLibro() {
+    public double getPrecioLibro() {
         return precioLibro;
     }
 
-    public void setPrecioLibro(String precioLibro) {
+    public void setPrecioLibro(double precioLibro) {
         this.precioLibro = precioLibro;
     }
 }
