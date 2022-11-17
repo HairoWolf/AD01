@@ -1,5 +1,7 @@
 package peval3.Clases;
 
+import peval3.GMethods;
+
 /**
  *
  * @author Javier Tienda González
@@ -37,6 +39,22 @@ public class Libros {
         this.genero = genero;
         this.paisAutor = paisAutor;
         this.precioLibro = precioLibro;
+    }
+
+    /**
+     * Method that print all the information of the book
+     */
+    public void printInformation(){
+        GMethods.println("Codigo Libro: " + this.codLibro +
+                "\nNumero de paginas: " + this.numPaginas +
+                "\nAño edicion: " + this.anyoEdicion +
+                "\nNombre libro: " + this.nomLibro +
+                "\nEditorial: " + this.editorial +
+                "\nAutor: " + this.autor +
+                "\nGenero: " + this.genero +
+                "\nPais autor: " + this.paisAutor +
+                "\nPrecio libro: " + this.precioLibro);
+        GMethods.printDiv();
     }
 
     /**

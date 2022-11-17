@@ -38,7 +38,9 @@ public class Usuario {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    //TODO comentar
+    /**
+     * Method that print all the information of the user
+     */
     public void printInformation(){
         GMethods.println("Codigo Usuario: " + this.codUsuario +
                 "\nNombre: " + this.nombre +

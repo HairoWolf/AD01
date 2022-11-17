@@ -56,7 +56,7 @@ public class GMethods {
 	public static void printError(String txt) { System.out.println("***"+ txt + "***");}
 	
 	/**
-	 * Method that gets a number to select one option
+	 * Method that receives a String
 	 * 
 	 * @param text
 	 * @return number selection
@@ -68,10 +68,10 @@ public class GMethods {
 	}
 
 	/**
-	 * Method that gets a number to select one option
+	 * Method that receives a String
 	 *
 	 * @param text
-	 * @return number selection
+	 * @return number
 	 */
 	public static int keyBInt(String text) {
 		println(text);
@@ -81,9 +81,21 @@ public class GMethods {
 
 	/**
 	 * Method that receives a String
+	 *
+	 * @param text
+	 * @return number
+	 */
+	public static double keyBDouble(String text) {
+		println(text);
+		keyb = new Scanner(System.in);
+		return keyb.nextDouble();
+	}
+
+	/**
+	 * Method that receives a String
 	 * 
 	 * @param text
-	 * @return number selection
+	 * @return string
 	 */
 	public static String keyBString(String text) {
 		println(text);

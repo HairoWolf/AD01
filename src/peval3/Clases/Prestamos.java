@@ -50,7 +50,9 @@ public class Prestamos {
         }
     }
 
-    //TODO comentar
+    /**
+     * Method that print all the information of the loan
+     */
     public void printInformation(){
         GMethods.println("Numero Pedido: " + this.numPedido +
                 "\nNombre del Libro: " + this.libro.getNomLibro() +

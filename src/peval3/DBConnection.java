@@ -4,7 +4,6 @@ import org.neodatis.odb.ODB;
 import org.neodatis.odb.ODBFactory;
 import org.neodatis.odb.core.query.criteria.Where;
 import org.neodatis.odb.impl.core.query.criteria.CriteriaQuery;
-import org.neodatis.odb.impl.core.query.criteria.CriteriaQueryExecutionPlan;
 import peval3.Clases.Libros;
 import peval3.Clases.Prestamos;
 import peval3.Clases.Usuario;
