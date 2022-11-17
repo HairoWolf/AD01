@@ -1,5 +1,11 @@
 package peval3.Clases;
 
+import peval3.GMethods;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Javier Tienda González
@@ -20,7 +26,7 @@ public class Prestamos {
      * Campo relacion con la clase Usuario
      */
     private Usuario usuario;
-    private String fechaSalida, fechaMaxDevolucion, fechaDevolucion;
+    private Date fechaSalida, fechaMaxDevolucion, fechaDevolucion;
 
     /**
      * Constructor de clase parametrizado
@@ -35,9 +41,25 @@ public class Prestamos {
         this.numPedido = numPedido;
         this.libro = libro;
         this.usuario = usuario;
-        this.fechaSalida = fechaSalida;
-        this.fechaMaxDevolucion = fechaMaxDevolucion;
-        this.fechaDevolucion = fechaDevolucion;
+        try {
+            this.fechaSalida = new SimpleDateFormat("dd/MM/yyyy").parse(fechaSalida);
+            this.fechaMaxDevolucion = new SimpleDateFormat("dd/MM/yyyy").parse(fechaMaxDevolucion);
+            this.fechaDevolucion = new SimpleDateFormat("dd/MM/yyyy").parse(fechaDevolucion);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    //TODO comentar
+    public void printInformation(){
+        GMethods.println("Numero Pedido: " + this.numPedido +
+                "\nNombre del Libro: " + this.libro.getNomLibro() +
+                "\nNombre del Usuario: " + this.usuario.getNombre() +
+                "\nCodigo del Usuario: " + this.usuario.getCodUsuario() +
+                "\nFecha Salida prestamo: " + this.fechaSalida +
+                "\nFecha Maxima devolucion: " + this.fechaMaxDevolucion +
+                "\nFecha devolucion: " + this.fechaDevolucion);
+        GMethods.printDiv();
     }
 
     /**
@@ -67,27 +89,27 @@ public class Prestamos {
         this.usuario = usuario;
     }
 
-    public String getFechaSalida() {
+    public Date getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(String fechaSalida) {
+    public void setFechaSalida(Date fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
-    public String getFechaMaxDevolucion() {
+    public Date getFechaMaxDevolucion() {
         return fechaMaxDevolucion;
     }
 
-    public void setFechaMaxDevolucion(String fechaMaxDevolucion) {
+    public void setFechaMaxDevolucion(Date fechaMaxDevolucion) {
         this.fechaMaxDevolucion = fechaMaxDevolucion;
     }
 
-    public String getFechaDevolucion() {
+    public Date getFechaDevolucion() {
         return fechaDevolucion;
     }
 
-    public void setFechaDevolucion(String fechaDevolucion) {
+    public void setFechaDevolucion(Date fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
 }

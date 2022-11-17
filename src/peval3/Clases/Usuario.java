@@ -1,5 +1,7 @@
 package peval3.Clases;
 
+import peval3.GMethods;
+
 /**
  *
  * @author Javier Tienda González
@@ -34,6 +36,19 @@ public class Usuario {
         this.poblacion = poblacion;
         this.provincia = provincia;
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    //TODO comentar
+    public void printInformation(){
+        GMethods.println("Codigo Usuario: " + this.codUsuario +
+                "\nNombre: " + this.nombre +
+                "\nApellido: " + this.apellido +
+                "\nDNI: " + this.dni +
+                "\nDomicilio: " + this.domicilio +
+                "\nPoblacion: " + this.poblacion +
+                "\nProvincia: " + this.provincia +
+                "\nFecha Nacimiento: " + this.fechaNacimiento);
+        GMethods.printDiv();
     }
 
     /**

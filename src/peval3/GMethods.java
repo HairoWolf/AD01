@@ -68,6 +68,18 @@ public class GMethods {
 	}
 
 	/**
+	 * Method that gets a number to select one option
+	 *
+	 * @param text
+	 * @return number selection
+	 */
+	public static int keyBInt(String text) {
+		println(text);
+		keyb = new Scanner(System.in);
+		return keyb.nextInt();
+	}
+
+	/**
 	 * Method that receives a String
 	 * 
 	 * @param text
